@@ -128,7 +128,6 @@ section {
     justify-content: center;
     align-items: center;
     gap: 4rem;
-    overflow: hidden;
 }
 
 .home-content h3 {
@@ -858,7 +857,8 @@ span {
         text-align: center;
         gap: 2rem;
         min-height: auto;
-        padding: 10rem 3% 5rem;
+        padding: 10rem 5% 5rem;
+        overflow: visible;
     }
 
     .home-content {
@@ -982,7 +982,8 @@ span {
     }
 
     .home {
-        padding: 9rem 3% 3rem;
+        padding: 9rem 5% 3rem;
+        overflow: visible;
     }
 
     .home-content h1 {
