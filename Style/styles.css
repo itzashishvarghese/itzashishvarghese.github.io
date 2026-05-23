@@ -306,6 +306,16 @@ span {
     align-items: center;
     gap: 1.2rem;
     flex: 1 1 25rem;
+    padding: 1.2rem;
+    border-radius: 1.2rem;
+    transition: all 0.4s ease;
+    border: 1px solid transparent;
+}
+
+.detail-item:hover {
+    background: rgba(0, 212, 255, 0.03);
+    border-color: rgba(0, 212, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.05);
 }
 
 .detail-item i {
@@ -319,6 +329,12 @@ span {
     background: rgba(0, 212, 255, 0.1);
     border-radius: 1rem;
     flex-shrink: 0;
+    transition: all 0.4s ease;
+}
+
+.detail-item:hover i {
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
 }
 
 .detail-item h4 {
@@ -384,6 +400,20 @@ span {
     background: rgba(255, 255, 255, 0.08);
     border-radius: 5rem;
     overflow: hidden;
+    position: relative;
+}
+
+.skill-bar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.05), transparent);
+    animation: skillShimmer 3s ease-in-out infinite;
+}
+
+@keyframes skillShimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
 }
 
 .skill-per {
@@ -393,6 +423,7 @@ span {
     border-radius: 5rem;
     transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
+    box-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
 }
 
 .skill-per.animate {
@@ -409,7 +440,13 @@ span {
     height: 1.6rem;
     background: var(--main-color);
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.6), 0 0 30px rgba(0, 212, 255, 0.3);
+    animation: dotPulse 2s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+    0%, 100% { box-shadow: 0 0 15px rgba(0, 212, 255, 0.6), 0 0 30px rgba(0, 212, 255, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.8), 0 0 40px rgba(0, 212, 255, 0.4); }
 }
 
 /* ==================== SERVICES ==================== */
@@ -452,14 +489,33 @@ span {
     transition: opacity 0.4s ease;
 }
 
+.services-container .services-box::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 2rem;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.4), transparent 50%, rgba(120, 0, 255, 0.3));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
 .services-container .services-box:hover::before {
     opacity: 1;
 }
 
+.services-container .services-box:hover::after {
+    opacity: 1;
+}
+
 .services-container .services-box:hover {
-    border-color: rgba(0, 212, 255, 0.4);
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(0, 212, 255, 0.15);
+    border-color: transparent;
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 212, 255, 0.12), 0 0 30px rgba(0, 212, 255, 0.06);
 }
 
 .services-box i {
@@ -469,6 +525,13 @@ span {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 1.5rem;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.services-box:hover i {
+    filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.4));
+    transform: scale(1.1);
 }
 
 .services-box h3 {
@@ -485,10 +548,48 @@ span {
 /* ==================== PORTFOLIO ==================== */
 .portfolio {
     background: var(--snd-bg-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.04), transparent 70%);
+    top: -200px;
+    right: -200px;
+    animation: portGlow 10s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.portfolio::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(120, 0, 255, 0.03), transparent 70%);
+    bottom: -150px;
+    left: -100px;
+    animation: portGlow2 12s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes portGlow {
+    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+    50% { transform: translate(-40px, 30px) scale(1.2); opacity: 1; }
+}
+
+@keyframes portGlow2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(30px, -20px) scale(1.15); }
 }
 
 .portfolio h2 {
     margin-bottom: 4rem;
+    position: relative;
+    z-index: 2;
 }
 
 .portfolio-container {
@@ -496,6 +597,8 @@ span {
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     gap: 2.5rem;
+    position: relative;
+    z-index: 2;
 }
 
 .portfolio-container .portfolio-box {
@@ -505,23 +608,46 @@ span {
     overflow: hidden;
     display: flex;
     border: 1px solid transparent;
-    transition: border-color 0.4s ease;
+    transition: all 0.5s ease;
+}
+
+.portfolio-box::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 2rem;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.5), transparent 40%, transparent 60%, rgba(120, 0, 255, 0.5));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 10;
+}
+
+.portfolio-box:hover::before {
+    opacity: 1;
 }
 
 .portfolio-box:hover {
-    border-color: var(--glass-border);
+    border-color: transparent;
+    box-shadow: 0 10px 40px rgba(0, 212, 255, 0.12), 0 0 20px rgba(0, 212, 255, 0.06);
+    transform: translateY(-6px);
 }
 
 .portfolio-box img {
     width: 100%;
     height: 30rem;
     object-fit: cover;
-    transition: transform 0.5s ease;
-    opacity: 0.8;
+    transition: all 0.6s ease;
+    opacity: 0.85;
 }
 
 .portfolio-box:hover img {
     transform: scale(1.1);
+    opacity: 1;
 }
 
 .portfolio-box .portfolio-layer {
@@ -549,6 +675,7 @@ span {
     font-size: 2.6rem;
     color: var(--bg-color);
     font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .portfolio-layer p {
@@ -568,10 +695,13 @@ span {
     background: var(--bg-color);
     border-radius: 50%;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .portfolio-layer a:hover {
     background: var(--text-color);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+    transform: scale(1.1);
 }
 
 .portfolio-layer a i {
