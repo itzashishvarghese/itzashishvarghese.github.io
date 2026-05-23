@@ -41,17 +41,36 @@ nav{position:fixed;top:0;width:100%;height:44px;background:rgba(0,0,0,.8);backdr
 .phone.blue{background:linear-gradient(160deg,#5d8aad,#3d6a8d,#2a4f6e);box-shadow:0 30px 80px rgba(60,100,150,.25),0 0 0 1px rgba(100,160,255,.15)}
 .phone.white{background:linear-gradient(160deg,#f7f5f0,#e8e5df,#dbd8d2);box-shadow:0 30px 80px rgba(200,200,200,.3),0 0 0 1px rgba(255,255,255,.4)}
 .phone.black{background:linear-gradient(160deg,#555558,#3a3a3d,#222224);box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.08)}
-.phone-screen-wrap{width:100%;height:100%;background:#000;border-radius:40px;overflow:hidden;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.phone-screen-wrap{width:100%;height:100%;background:#000;border-radius:40px;overflow:hidden;position:relative;display:flex;flex-direction:column;align-items:center}
 .phone-island{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:95px;height:26px;background:#000;border-radius:20px;z-index:5;display:flex;align-items:center;justify-content:flex-end;padding-right:10px;border:1px solid #1a1a1a}
 .phone-island-dot{width:8px;height:8px;border-radius:50%;background:radial-gradient(circle at 40% 40%,#2a3a4a,#0a1520);box-shadow:0 0 2px rgba(50,100,200,.3)}
-.phone-time{font-size:60px;font-weight:200;letter-spacing:-2px;position:relative;z-index:2}
-.phone-date{font-size:16px;color:#999;margin-top:4px;position:relative;z-index:2}
-.phone-wallpaper{position:absolute;inset:0;border-radius:40px;z-index:1;overflow:hidden;transition:background .5s}
-.phone.natural .phone-wallpaper{background:linear-gradient(180deg,rgba(180,150,80,.12) 0%,rgba(0,0,0,.9) 40%,rgba(180,150,80,.06) 100%)}
-.phone.blue .phone-wallpaper{background:linear-gradient(180deg,rgba(40,120,220,.2) 0%,rgba(0,0,0,.9) 40%,rgba(40,120,220,.08) 100%)}
-.phone.white .phone-wallpaper{background:linear-gradient(180deg,rgba(200,200,220,.15) 0%,rgba(0,0,0,.9) 40%,rgba(200,200,220,.06) 100%)}
-.phone.black .phone-wallpaper{background:linear-gradient(180deg,rgba(100,100,120,.12) 0%,rgba(0,0,0,.95) 40%,rgba(60,60,80,.06) 100%)}
-.phone-bar{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:110px;height:4px;background:#fff;border-radius:4px;opacity:.5;z-index:5}
+.phone-status{position:absolute;top:14px;left:20px;right:20px;display:flex;justify-content:space-between;z-index:4;font-size:11px;font-weight:600}
+.phone-status-r{display:flex;gap:4px;align-items:center}
+.phone-status-r i{font-size:10px}
+.phone-lock{position:absolute;top:52px;left:50%;transform:translateX(-50%);z-index:3;font-size:10px;opacity:.6}
+.phone-time{font-size:58px;font-weight:200;letter-spacing:-2px;position:relative;z-index:2;margin-top:70px}
+.phone-date{font-size:14px;color:rgba(255,255,255,.7);margin-top:2px;position:relative;z-index:2;font-weight:500}
+.phone-widgets{position:absolute;bottom:60px;left:16px;right:16px;z-index:3;display:flex;gap:8px}
+.pw{flex:1;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border-radius:14px;padding:10px;font-size:10px;color:rgba(255,255,255,.85);line-height:1.3}
+.pw-title{font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:.5px;opacity:.7;margin-bottom:4px}
+.pw-val{font-size:18px;font-weight:300}
+.phone-bottom{position:absolute;bottom:16px;left:20px;right:20px;z-index:5;display:flex;justify-content:space-between}
+.phone-shortcut{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.15);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;font-size:14px}
+.phone-wallpaper{position:absolute;inset:0;border-radius:40px;z-index:1;overflow:hidden;transition:opacity .5s}
+/* Wallpapers - colorful flowing abstract gradients */
+.wp-natural{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 20%,#0f3460 40%,#533483 60%,#e94560 80%,#1a1a2e 100%)}
+.wp-blue{background:linear-gradient(135deg,#0c0c1d 0%,#1a1a4e 15%,#0077b6 35%,#00b4d8 50%,#90e0ef 65%,#1a1a4e 85%,#0c0c1d 100%)}
+.wp-white{background:linear-gradient(135deg,#2d1b69 0%,#6b3fa0 20%,#e040fb 40%,#ff6090 55%,#ffa726 70%,#6b3fa0 90%,#2d1b69 100%)}
+.wp-black{background:linear-gradient(135deg,#000 0%,#1a0a2e 20%,#2d1b4e 35%,#0d47a1 50%,#1a237e 65%,#0a0a1a 85%,#000 100%)}
+.wp-blob{position:absolute;border-radius:50%;filter:blur(40px);opacity:.6;animation:blobFloat 8s ease-in-out infinite}
+.wp-blob:nth-child(1){width:120px;height:120px;top:20%;left:10%;animation-delay:0s}
+.wp-blob:nth-child(2){width:100px;height:100px;top:50%;right:5%;animation-delay:-3s}
+.wp-blob:nth-child(3){width:80px;height:80px;bottom:25%;left:30%;animation-delay:-5s}
+@keyframes blobFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(15px,-20px) scale(1.1)}66%{transform:translate(-10px,15px) scale(.9)}}
+.phone.natural .wp-blob:nth-child(1){background:#e94560}.phone.natural .wp-blob:nth-child(2){background:#533483}.phone.natural .wp-blob:nth-child(3){background:#0f3460}
+.phone.blue .wp-blob:nth-child(1){background:#00b4d8}.phone.blue .wp-blob:nth-child(2){background:#0077b6}.phone.blue .wp-blob:nth-child(3){background:#90e0ef}
+.phone.white .wp-blob:nth-child(1){background:#e040fb}.phone.white .wp-blob:nth-child(2){background:#ff6090}.phone.white .wp-blob:nth-child(3){background:#ffa726}
+.phone.black .wp-blob:nth-child(1){background:#1a237e}.phone.black .wp-blob:nth-child(2){background:#0d47a1}.phone.black .wp-blob:nth-child(3){background:#311b92}
 .phone-side-r{position:absolute;right:-3px;top:145px;width:3px;height:55px;border-radius:0 3px 3px 0;z-index:6;transition:background .5s}
 .phone.natural .phone-side-r{background:#9c9a90}.phone.blue .phone-side-r{background:#3d6a8d}.phone.white .phone-side-r{background:#dbd8d2}.phone.black .phone-side-r{background:#3a3a3d}
 .phone-side-l1,.phone-side-l2{position:absolute;left:-3px;width:3px;border-radius:3px 0 0 3px;z-index:6;transition:background .5s}
@@ -161,9 +180,13 @@ footer a{color:#2997ff;text-decoration:none}
         <div class="phone-side-l2"></div>
         <div class="phone-screen-wrap">
           <div class="phone-island"><div class="phone-island-dot"></div></div>
-          <div class="phone-wallpaper"></div>
+          <div class="phone-status"><span>9:41</span><span class="phone-status-r"><i class="fa-solid fa-signal"></i><i class="fa-solid fa-wifi"></i><i class="fa-solid fa-battery-full"></i></span></div>
+          <div class="phone-lock"><i class="fa-solid fa-lock"></i></div>
+          <div class="phone-wallpaper wp-natural" id="phoneWP"><div class="wp-blob"></div><div class="wp-blob"></div><div class="wp-blob"></div></div>
           <div class="phone-time" id="phoneTime">9:41</div>
           <div class="phone-date" id="phoneDate">Friday, May 23</div>
+          <div class="phone-widgets"><div class="pw"><div class="pw-title">Weather</div><div class="pw-val">38°</div>Partly Sunny</div><div class="pw"><div class="pw-title">Calendar</div><div class="pw-val">23</div>May</div></div>
+          <div class="phone-bottom"><div class="phone-shortcut"><i class="fa-solid fa-flashlight"></i></div><div class="phone-shortcut"><i class="fa-solid fa-camera"></i></div></div>
           <div class="phone-bar"></div>
         </div>
       </div>
@@ -242,6 +265,7 @@ function changeColor(el){
   const c=el.dataset.color;
   document.getElementById("phoneDevice").className="phone "+c;
   document.getElementById("phoneGlow").className="phone-glow "+c;
+  document.getElementById("phoneWP").className="phone-wallpaper wp-"+c;
   document.getElementById("colorLabel").innerHTML="Color: <span>"+el.dataset.name+"</span>";
 }
 
