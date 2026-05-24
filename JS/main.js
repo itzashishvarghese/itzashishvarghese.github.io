@@ -366,49 +366,6 @@
     });
   }
 
-  /* --------------------------------------------------------------------------
-     14. CUSTOM CURSOR
-     -------------------------------------------------------------------------- */
-  const cursorDot = document.getElementById("cursorDot");
-  const cursorOutline = document.getElementById("cursorOutline");
-
-  if (cursorDot && cursorOutline && window.matchMedia("(hover: hover)").matches) {
-    let mouseX = 0, mouseY = 0;
-    let outlineX = 0, outlineY = 0;
-
-    document.addEventListener("mousemove", (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      cursorDot.style.left = mouseX - 4 + "px";
-      cursorDot.style.top = mouseY - 4 + "px";
-    });
-
-    function animateOutline() {
-      outlineX += (mouseX - outlineX) * 0.15;
-      outlineY += (mouseY - outlineY) * 0.15;
-      cursorOutline.style.left = outlineX - 18 + "px";
-      cursorOutline.style.top = outlineY - 18 + "px";
-      requestAnimationFrame(animateOutline);
-    }
-    animateOutline();
-
-    // Hover effect on interactive elements
-    const hoverTargets = document.querySelectorAll("a, button, .btn, .portfolio-box, .services-box, .filter-btn, .social-media a, input, textarea, .card, .nav-link, .detail-item, .theme-toggle");
-    hoverTargets.forEach((el) => {
-      el.addEventListener("mouseenter", () => {
-        cursorDot.classList.add("hover");
-        cursorOutline.classList.add("hover");
-      });
-      el.addEventListener("mouseleave", () => {
-        cursorDot.classList.remove("hover");
-        cursorOutline.classList.remove("hover");
-      });
-    });
-  } else {
-    // Hide cursor elements on touch devices
-    if (cursorDot) cursorDot.style.display = "none";
-    if (cursorOutline) cursorOutline.style.display = "none";
-  }
 
   /* --------------------------------------------------------------------------
      15. SCROLL PROGRESS BAR

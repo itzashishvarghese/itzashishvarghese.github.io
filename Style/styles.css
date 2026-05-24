@@ -10,7 +10,6 @@
     outline: none;
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
-    cursor: none;
 }
 
 /* ==================== PRELOADER ==================== */
@@ -90,40 +89,7 @@
     50% { opacity: 1; transform: scale(1.05); }
 }
 
-/* ==================== CUSTOM CURSOR ==================== */
-.cursor-dot {
-    position: fixed;
-    width: 8px;
-    height: 8px;
-    background: #00d4ff;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 99998;
-    transition: transform 0.1s ease;
-    box-shadow: 0 0 10px rgba(0, 212, 255, 0.6), 0 0 20px rgba(0, 212, 255, 0.3);
-}
 
-.cursor-outline {
-    position: fixed;
-    width: 36px;
-    height: 36px;
-    border: 2px solid rgba(0, 212, 255, 0.4);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 99997;
-    transition: all 0.15s ease-out;
-}
-
-.cursor-dot.hover {
-    transform: scale(2.5);
-    background: rgba(0, 212, 255, 0.8);
-}
-
-.cursor-outline.hover {
-    transform: scale(1.5);
-    border-color: rgba(123, 47, 247, 0.6);
-    background: rgba(0, 212, 255, 0.05);
-}
 
 /* ==================== SCROLL PROGRESS ==================== */
 .scroll-progress {
@@ -139,27 +105,23 @@
 }
 
 /* ==================== THEME TOGGLE ==================== */
-.nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-
 .theme-toggle {
     background: none;
     border: 2px solid rgba(0, 212, 255, 0.2);
     color: var(--text-color);
     font-size: 1.8rem;
-    cursor: none;
+    cursor: pointer;
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    margin-left: 2rem;
+    vertical-align: middle;
 }
 
 .theme-toggle:hover {
@@ -215,7 +177,7 @@ body.light-mode .preloader-tagline {
     font-size: 1.4rem;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    cursor: none;
+    cursor: pointer;
     transition: all 0.3s ease;
     letter-spacing: 0.5px;
 }
@@ -304,11 +266,7 @@ body.light-mode .preloader-tagline {
     transform: translateY(-2px);
 }
 
-/* Hide cursor on touch devices */
-@media (hover: none) {
-    .cursor-dot, .cursor-outline { display: none !important; }
-    * { cursor: auto !important; }
-}
+
 
 :root {
     --bg-color: #0a0e1a;
@@ -1554,6 +1512,12 @@ span {
         font-size: 2rem;
         margin: 3rem 0;
         margin-left: 0;
+    }
+
+    .navbar .theme-toggle {
+        margin: 2rem auto;
+        margin-left: 0;
+        display: flex;
     }
 
     .home {
