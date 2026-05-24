@@ -1094,12 +1094,14 @@ span {
 /* ==================== FOOTER ==================== */
 .footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
     padding: 2rem 9%;
     background: var(--snd-bg-color);
     border-top: 1px solid var(--glass-border);
+    position: relative;
 }
 
 .footer-text {
@@ -1111,6 +1113,10 @@ span {
 }
 
 .footer-iconTop a {
+    position: absolute;
+    right: 9%;
+    top: 50%;
+    transform: translateY(-50%);
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -1443,8 +1449,6 @@ span {
     }
 
     .footer {
-        flex-direction: column;
-        text-align: center;
         gap: 1.5rem;
     }
 }
