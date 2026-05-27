@@ -22,14 +22,8 @@
         <meta property="og:type" content="website">
         <meta name="twitter:card" content="summary_large_image">
 
-        <!-- DNS Preconnect for faster external resource loading -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-
-        <!--  FONT AWESOME — loaded async so it doesn't block page render  -->
-        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-        <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+        <!--  FONT AWESOME  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
         <!--  MAIN CSS  -->
         <link rel="stylesheet" href="Style/styles.css">
@@ -108,7 +102,7 @@
             <div class="about-lightning" id="aboutLightning"></div>
             <div class="about-particles" id="aboutParticles"></div>
             <div class="about-img">
-                <img src="img/picofme (2).png" alt="About Ashish Varghese">
+                <img src="img/picofme (2).png" alt="About Ashish Varghese" loading="lazy">
             </div>
 
             <div class="about-content">
@@ -364,7 +358,7 @@
             </div>
             <div class="portfolio-container">
                 <div class="portfolio-box" data-category="clone">
-                    <img src="img/youtube.png" alt="YouTube Clone Project">
+                    <img src="img/youtube.png" alt="YouTube Clone Project" loading="lazy">
                     <div class="portfolio-layer">
                         <h4>YouTube Clone</h4>
                         <p>A fully functional YouTube homepage clone with video grid, search functionality, sidebar navigation, and responsive design built with HTML, CSS & JavaScript.</p>
@@ -373,7 +367,7 @@
                 </div>
 
                 <div class="portfolio-box" data-category="clone">
-                    <img src="img/spotify.png" alt="Spotify Clone Project">
+                    <img src="img/spotify.png" alt="Spotify Clone Project" loading="lazy">
                     <div class="portfolio-layer">
                         <h4>Spotify Clone</h4>
                         <p>A Spotify web player clone featuring playlist sidebar, music controls, album art, progress bar, and a sleek dark UI with green accents.</p>
@@ -382,7 +376,7 @@
                 </div>
 
                 <div class="portfolio-box" data-category="clone">
-                    <img src="img/iphone.png" alt="iPhone Clone Project">
+                    <img src="img/iphone.png" alt="iPhone Clone Project" loading="lazy">
                     <div class="portfolio-layer">
                         <h4>iPhone 15 Pro Landing Page</h4>
                         <p>A premium Apple-inspired product landing page with stunning animations, gradient effects, scroll reveals, and pixel-perfect responsive design.</p>
@@ -391,7 +385,7 @@
                 </div>
 
                 <div class="portfolio-box" data-category="app">
-                    <img src="img/weather.png" alt="Weather Application Project">
+                    <img src="img/weather.png" alt="Weather Application Project" loading="lazy">
                     <div class="portfolio-layer">
                         <h4>Weather App</h4>
                         <p>A dynamic weather application with city search, 5-day forecast, hourly data, and beautiful glassmorphism UI supporting 8+ cities.</p>
@@ -400,7 +394,7 @@
                 </div>
 
                 <div class="portfolio-box" data-category="dashboard">
-                    <img src="img/trading.png" alt="Crypto Trading Dashboard Project">
+                    <img src="img/trading.png" alt="Crypto Trading Dashboard Project" loading="lazy">
                     <div class="portfolio-layer">
                         <h4>Crypto Trading Dashboard</h4>
                         <p>A Binance-style crypto trading platform with live price updates, candlestick charts, order book, buy/sell forms, and portfolio tracking for 10+ coins.</p>
@@ -409,7 +403,7 @@
                 </div>
 
                 <div class="portfolio-box" data-category="clone">
-                    <img src="img/netflix.png" alt="Netflix Clone Project">
+                    <img src="img/netflix.png" alt="Netflix Clone Project" loading="lazy">
                     <div class="portfolio-layer">
                         <h4>Netflix Clone</h4>
                         <p>A pixel-perfect Netflix clone with hero banner, categorized content rows, Top 10 rankings, movie detail modals, and smooth hover animations.</p>
@@ -487,10 +481,10 @@
         </footer>
 
         <!--  TYPED JS  -->
-        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js" defer></script>
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
         <!--  SCROLL REVEAL  -->
-        <script src="https://unpkg.com/scrollreveal" defer></script>
+        <script src="https://unpkg.com/scrollreveal"></script>
 
         <!--  MAIN JS  -->
         <script src="JS/main.js"></script>
